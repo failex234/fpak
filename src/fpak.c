@@ -127,8 +127,17 @@ void addfiletoindex( FILE *file ) {
 }
 
 void writeheader( void ) {
+    //Magic Bytes
     fputs("FPAK", fpak);
 
+    //fpak version
+    char *version = malloc(sizeof(char) * 3);
+    sprintf(version, "%d", VERSION);
+    fputs("%d");
+
+    //write length of array and the array itself
+    //write size of all files and number of files
+    //write file struct array
     char *filenum = malloc(sizeof(char) * 32);
     char *arrlen = malloc(sizeof(char) * 32);
     sprintf(filenum, "%d", currfiles);

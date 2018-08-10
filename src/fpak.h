@@ -17,7 +17,8 @@ typedef struct archivefile {
     char filename[32];
 } archivefile;
 
-//Globale Variablen
+const int VERSION 1;
+
 archivefile **headertable; //Speichert Dateigrößen und längen der Dateien nacheinander im Header.
 int afilearrlength = 0; //Länge es Archivefile Array.
 int currfiles = 0; //Aktuelle Anzahl aller Dateien
